@@ -1,0 +1,19 @@
+{
+  "name": "jsmostwanted",
+  "version": "1.0.0",
+  "description": "A JS program to search for people , their relatives, or by characteristics.",
+  "main": "JSFunction.js",
+  "scripts": {
+    "test": "karma start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/BriannaMarks/Most-Wanted.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/BriannaMarks/Most-Wanted/issues"
+  },
+  "homepage": "https://github.com/BriannaMarks/Most-Wanted#readme"
+}

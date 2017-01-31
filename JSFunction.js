@@ -2,36 +2,63 @@
     ;
 }
 function initSearchByName() {
-    ;
+    var splitName = new Array;
+    splitName = getName();
 }
 function initSearchByTraits() {
-    ;
+    var splitCharacteristics = new Array;
+    splitCharacteristics = getCharacteristics();
+    for (let i = 0; i < splitCharacteristics.length; i++) {
+        switch(splitCharacteristics[i]){
+            case "name":
+                ;
+            break;
+            case "gender":
+                ;
+            break;
+            case "dob":
+                ;
+            break;
+            case "height":
+                ;
+            break;
+            case "weight":
+                ;
+            break;
+            case "eyeColor":
+                ;
+            break;
+            case "occupation":
+                ;
+            break;
+            case "parents":
+                ;
+            break;
+            case "currentSpouse":
+                ;
+            break;
+            default:
+                ;
+        }
+    }
 }
 
 function getName() {
-    var inputName = prompt("Enter the name in the following format: FirstName LastName");
-    var splitName = inputName.split(" ");
-    document.getElementById("Title").innerHTML = "Name:";
-    document.getElementById("Split").innerHTML = splitName;
-    var result = _.findWhere(data, { "firstName": splitName[0] } && data, {"lastName": splitName[1]});
-
+    var inputName = prompt("Enter the name in the following format: firstName,lastName");
+    var splitName = [inputName.split(",")];
+    return splitName;
 }
 function getCharacteristics() {
-    var inputCharacteristics = prompt("Enter characteristics in the following format: ");
-    var splitCharacteristics = inputCharacteristics.split(" ");
-    displayResult("Title", "Characteristics:");
-    displayResult("Split", splitCharacteristics);
+    var inputCharacteristics = prompt("Enter characteristic(s) from the key below with a comma between each one.");
+    var splitCharacteristics = [inputCharacteristics.split(",")];
+    return splitCharacteristics;
 }
-
 
 function lookForName(fName, lName) {
     var search = data.indexOf("fName", "lName");
     if (search != null) {
         return data[search];
     }
-}
-function displayResult(result, placement) {
-    document.getElementById(placement).innerHTML = result;
 }
 function isNumeric(number) {
     var numberTest = isNaN(number)
@@ -42,7 +69,6 @@ function isNumeric(number) {
         return numberTest = true;
     }
 }
-
 function getGender(array, gender) {
     var arrayLength = array.length;
     for (var i = 0; i <= arrayLength; i++) {
