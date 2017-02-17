@@ -1,6 +1,6 @@
-﻿function initSearch(people) {
-    ;
-}
+﻿//function initSearch(people) {
+//    ;
+//}
 function initSearchByName() {
     var splitName = new Array;
     splitName = getName();
@@ -8,49 +8,60 @@ function initSearchByName() {
 function initSearchByTraits() {
     var splitCharacteristics = new Array;
     splitCharacteristics = getCharacteristics();
-    for (let i = 0; i < splitCharacteristics.length; i++) {
+    for (let i = 0; i <= splitCharacteristics.length; i++) {
         switch(splitCharacteristics[i]){
             case "name":
-                ;
+                getName();
             break;
             case "gender":
-                ;
+                var gender = prompt("What gender are you looking for: male or female?")
+                getGender(data,gender);
             break;
             case "dob":
-                ;
+                var dob = prompt("Enter age in years")
+                getAge(data, dob);
             break;
             case "height":
-                ;
+                var height = prompt("Enter the height the following format: #'#'' ");
+                getHeight(data, height);
             break;
             case "weight":
-                ;
+                var weight = prompt("Enter the weight in lbs.");
+                getWeight(data, weight);
             break;
             case "eyeColor":
-                ;
+                var color = propmt("Enter the eye color").trim;
+                getEye(data, color);
             break;
             case "occupation":
-                ;
+                var job = prompt("Enter the job").trim;
+                getOccupation(data, job);
             break;
             case "parents":
-                ;
+                var parents = prompt("Enter");
+                getParent(data, parents);
             break;
             case "currentSpouse":
-                ;
+                var spouse = prompt("Enter the spouse's name in the following format: fistName,lastName").trim;
+                getSpouse(data, spouse);
             break;
             default:
+                alert("Please make sure all terms are correct and try again.");
+                initSearchByTraits();
                 ;
         }
     }
 }
 
 function getName() {
-    var inputName = prompt("Enter the name in the following format: firstName,lastName");
-    var splitName = [inputName.split(",")];
-    return splitName;
+    var inputName = prompt("Enter the name in the following format: firstName,lastName").trim;
+    var split = [inputName.split(",")];
+    return split;
 }
 function getCharacteristics() {
-    var inputCharacteristics = prompt("Enter characteristic(s) from the key below with a comma between each one.");
+    var inputCharacteristics = prompt("Enter characteristic(s) from the key below with a comma between each one.").trim;
     var splitCharacteristics = [inputCharacteristics.split(",")];
+    //for (var i = 0; i <= splitCharacteristics; i++)
     return splitCharacteristics;
 }
 
@@ -69,75 +80,76 @@ function isNumeric(number) {
         return numberTest = true;
     }
 }
-function getGender(array, gender) {
-    var arrayLength = array.length;
+function getGender(data, theGender) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == gender) {
-            return array[i];
+        if (data[i] == theGender) {
+            return alert(data[i].gender);
         }
     }
 }           
-function getAge(array, age) {
-    var arrayLength = array.length;
+//function getAge(data, theAge) {
+//    var arrayLength = data.length;
+//    for (var i = 0; i <= arrayLength; i++) {
+//        if (data[i] == theAge) {
+
+//            return data[i];
+//        }
+//    }
+//}
+function getHeight(data, theHeight) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == age) {
-            return array[i];
+        if (data[i] == theHeight) {
+            return alert(data[i].height);
         }
     }
 }
-function getHeight(array, height) {
-    var arrayLength = array.length;
+function getWeight(data, theWeight) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == height) {
-            return array[i];
-        }
-    }
-}
-function getWeight(array, weight) {
-    var arrayLength = array.length;
-    for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == weight) {
-            return array[i];
+        if (data[i] == theWeight) {
+            return alert(data[i].weight);
         }
     };
 }
-function getEye(array, color) {
-    var arrayLength = array.length;
+function getEye(data, theColor) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == color) {
-            return array[i];
+        if (data[i] == theColor) {
+            return alert(data[i].eyeColor);
         }
     }
 }
-function getOccupation(array, job) {
-    var arrayLength = array.length;
+function getOccupation(data, theJob) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == job) {
-            return array[i];
+        if (data[i] == theJob) {
+            return alert(data[i].occupation);
         }
     }
 }
-function getSpouse(array, spouse) {
-    var arrayLength = array.length;
+function getSpouse(data, theSpouse) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == spouse) {
-            return array[i];
+        if (data[i] == theSpouse) {
+            return alert(data[i].currentSpouse);
         }
     }
 }
-function getDecendant(array, decendant) {
-    var arrayLength = array.length;
+//function getDecendant(data, theDecendant) {
+//    var arrayLength = data.length;
+//    for (var i = 0; i <= arrayLength; i++) {
+//        if (data[i] == theDecendant) {
+//            return alert(data[i]);
+//        }
+//    }
+//}
+function getParent(data, theParent) {
+    var arrayLength = data.length;
     for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == decendant) {
-            return array[i];
-        }
-    }
-}
-function getParent(array, parent) {
-    var arrayLength = array.length;
-    for (var i = 0; i <= arrayLength; i++) {
-        if (array[i] == parent) {
-            return array[i];
+        if (data[i] == theParent) {
+            return alert(data[i].parents);
         }
     }
 }
